@@ -1,20 +1,20 @@
 #include <stdio.h>
 /**
- *  main - main function
- *
- * Return: always 0
+*  main - main function
+*  
+* Return: always 0
 */
 int main(void)
 {
-    int i;
-    for (i = 0; i <= 9; i++)
+int i;
+for (i = 0; i <= 9; i++)
 {
-      putchar((i % 10) + '0');
-       if (i == 9)
-                  continue;
-             putchar(',');
-             putchar(' ');
+putchar((i % 10) + '0');
+if (i == 9)
+continue;
+putchar(',');
+putchar(' ');
 }
-           putchar('\n');
-          return (0);
+putchar('\n');
+return (0);
 }
