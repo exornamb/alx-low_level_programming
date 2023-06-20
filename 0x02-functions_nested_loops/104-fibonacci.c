@@ -1,31 +1,40 @@
 #include <stdio.h>
 /**
-* Print the first two Fibonacci numbers
-* Variable to store the next Fibonacci number
+* main - print the first 98
+* Return - returns 0
 */
-void print_fibonacci_numbers();
-int main()
+int main(void)
 {
-    print_fibonacci_numbers();
-    return 0;
+int c;
+unsigned long f1 = 0, f2 = 1, s;
+unsigned long f1h1, f1h2, f2h1, f2h2;
+unsigned long h1 , h2;
+for (c = 0; c < 92; c++)
+{
+s = f1 + f2;
+printf("%lu, ",s);
+f1 = f2;
+f2 = s;
 }
-
-void print_fibonacci_numbers()
+f1h1 = f1 / 10000000000;
+f2h1 = f2 / 10000000000;
+f1h2 = f1 % 10000000000;
+f2h2 = f2 % 10000000000;
+for (c = 93; c < 99; c++)
+h1 = f1h1 + f2h1;
+h2 = f1h2 + f2h2;
+if(f1h2 + f2h2 > 9999999999)
 {
-unsigned int fib1 = 1;
-unsigned int fib2 = 2;
-printf("%u, %u, ", fib1, fib2);
-unsigned int fib_next;
-for (int i = 3; i <= 98; i++) 
-{
-fib_next = fib1 + fib2;
-printf("%u", fib_next);
-if (i != 98) 
-{
+h1 += 1;
+h2 %= 10000000000;
+printf("%lu%lu",h1,h2);
+if(c != 98)
 printf(", ");
-}
-fib1 = fib2;
-fib2 = fib_next;
+f1h1 = f2h1;
+f1h2 = f2h2;
+f2h1 = h1;
+f2h2 = h2;
 }
 printf("\n");
+return (0);
 }
