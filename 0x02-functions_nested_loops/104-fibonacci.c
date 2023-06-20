@@ -1,28 +1,31 @@
 #include <stdio.h>
-
 /**
- * main - Entry point
+ * main - main function
  *
- * Return: Always 0
+ * Return: nothing
  */
 int main(void)
 {
-    unsigned int a = 1, b = 2, c;
-    int count;
+	int counter = 2;
 
-    printf("%u, %u", a, b);
+	float a = 1;
+	float b = a + 1;
+	float c = a + b;
 
-    for (count = 3; count <= 98; count++)
-    {
-        c = a + b;
-        printf(", %u", c);
-
-        a = b;
-        b = c;
-    }
-
-    printf("\n");
-
-    return(0);
-}
+	printf("%.0f, ", a);
+	printf("%.0f, ", b);
+	while (counter < 98)
+	{
+		counter++;
+		printf("%.0f", c);
+		a = b;
+		b = c;
+		c = a + b;
+		if (counter < 98)
+		{
+			printf(", ");
+		}
+	}
+	printf("\n");
+	return (0);
 }
