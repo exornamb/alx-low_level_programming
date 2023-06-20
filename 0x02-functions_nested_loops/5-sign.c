@@ -1,6 +1,7 @@
 #include "main.h"
 /**
- *print_sign - print signs
+* print_sign - print signs
+* @n: is a variable
 *Return: 1 if n>0, 0 else if n=0, -1 else
 */
 int print_sign(int n)
