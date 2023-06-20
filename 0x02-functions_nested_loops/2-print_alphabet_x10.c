@@ -1,7 +1,6 @@
 #include "main.h"
 /**
- * void - void function
- * return -returns 0
+* print_alphabet_x10 - alphabet x10
 */
 void print_alphabet_x10(void)
 {
@@ -15,5 +14,4 @@ _putchar (i);
 j++;
 _putchar ('\n');
 }
-return (0);
 }
