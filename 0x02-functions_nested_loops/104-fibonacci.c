@@ -1,28 +1,31 @@
 #include <stdio.h>
 /**
-* main - main function
-* Return: returns 0
+* Print the first two Fibonacci numbers
+* Variable to store the next Fibonacci number
 */
-int main(void)
+void print_fibonacci_numbers();
+int main()
 {
-int counter = 2;
-float a = 1;
-float b = a + 1;
-float c = a + b;
-printf("%.0f, ", a);
-printf("%.0f, ", b);
-while (counter < 98)
+    print_fibonacci_numbers();
+    return 0;
+}
+
+void print_fibonacci_numbers()
 {
-counter++;
-printf("%.0f", c);
-a = b;
-b = c;
-c = a + b;
-if (counter < 98)
+unsigned int fib1 = 1;
+unsigned int fib2 = 2;
+printf("%u, %u, ", fib1, fib2);
+unsigned int fib_next;
+for (int i = 3; i <= 98; i++) 
+{
+fib_next = fib1 + fib2;
+printf("%u", fib_next);
+if (i != 98) 
 {
 printf(", ");
 }
+fib1 = fib2;
+fib2 = fib_next;
 }
 printf("\n");
-return (0);
 }
