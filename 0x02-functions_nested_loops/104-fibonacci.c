@@ -7,15 +7,15 @@
  */
 int main(void)
 {
-    double a = 1, b = 2, c;
+    unsigned int a = 1, b = 2, c;
     int count;
 
-    printf("%.0f, %.0f", a, b);
+    printf("%u, %u", a, b);
 
     for (count = 3; count <= 98; count++)
     {
         c = a + b;
-        printf(", %.0f", c);
+        printf(", %u", c);
 
         a = b;
         b = c;
@@ -23,5 +23,6 @@ int main(void)
 
     printf("\n");
 
-    return 0;
+    return(0);
+}
 }
