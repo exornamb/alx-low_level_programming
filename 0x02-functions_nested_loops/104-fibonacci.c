@@ -1,4 +1,5 @@
 #include <stdio.h>
+
 /**
  * main - main function
  *
@@ -6,26 +7,21 @@
  */
 int main(void)
 {
-	int counter = 2;
+    int counter;
+    int fibonacci[100];
 
-	float a = 1;
-	float b = a + 1;
-	float c = a + b;
+    fibonacci[0] = 1;
+    fibonacci[1] = 2;
 
-	printf("%.0f, ", a);
-	printf("%.0f, ", b);
-	while (counter < 98)
-	{
-		counter++;
-		printf("%.0f", c);
-		a = b;
-		b = c;
-		c = a + b;
-		if (counter < 98)
-		{
-			printf(", ");
-		}
-	}
-	printf("\n");
-	return (0);
+    printf("%d, %d", fibonacci[0], fibonacci[1]);
+
+    for (counter = 2; counter < 98; counter++)
+    {
+        fibonacci[counter] = fibonacci[counter - 1] + fibonacci[counter - 2];
+        printf(", %d", fibonacci[counter]);
+    }
+
+    printf("\n");
+
+    return 0;
 }
