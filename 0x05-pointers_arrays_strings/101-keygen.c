@@ -8,15 +8,18 @@
 */
 int main(void)
 {
+int i;
 int sum;
-char c;
+char password[100];,
 srand(time(NULL));
-while (sum <= 2645)
+sum = 0;
+for (i = 0; sum < 2772 - 122; i++)
 {
-c = rand() % 128;
-sum += c;
-putchar(c);
+password[i] = rand() % 94 + 33;
+sum += password[i];
 }
-putchar(2772 - sum);
+password[i] = 2772 - sum;
+password[i + 1] = '\0';
+printf("%s", password);
 return (0);
 }
