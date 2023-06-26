@@ -10,7 +10,7 @@ int main(void)
 {
 int i;
 int sum;
-char password[100];,
+char password[100];
 srand(time(NULL));
 sum = 0;
 for (i = 0; sum < 2772 - 122; i++)
