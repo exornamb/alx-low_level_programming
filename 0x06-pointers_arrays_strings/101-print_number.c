@@ -1,5 +1,4 @@
 #include "main.h"
-#include <stdio.h>
 /**
  *print_number - prints an integer.
  *only using the putchar function.
@@ -8,28 +7,20 @@
  *
  *Return: void.
  */
-void _putchar(char c)
-{
-    putchar(c);
-}
 void print_number(int n)
 {
-    if (n < 0) {
-        _putchar('-');
-        n = -n;
-}
-
-    int divisor = 1;
-    while (n / divisor > 9)
-{
-        divisor *= 10;
-}
-
-    while (divisor != 0)
-{
-        int digit = n / divisor;
-        _putchar('0' + digit);
-        n %= divisor;
-        divisor /= 10;
-}
+	unsigned int num;
+/*check if number is negative*/
+	num = n;
+	if (n < 0)
+	{
+		_putchar(45);
+		num = -n;
+	}
+/* print number by recursion*/
+	if (num / 10)
+	{
+		print_number(num / 10);
+	}
+	_putchar((num % 10) + '0');
 }
